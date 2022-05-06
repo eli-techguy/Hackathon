@@ -1,1 +1,328 @@
-#lol no code here yet
+import turtle
+
+CURSOR_SIZE = 20
+FONT_SIZE = 12
+FONT = ("Arial", FONT_SIZE, "bold")
+
+#Windows Setup
+wn = turtle.Screen()
+wn.title("Garbage Collection App by Elias and Adam")
+wn.bgcolor("white")
+wn.setup(width=1000, height=800)
+wn.tracer(0)
+
+# Functions
+
+def Main_page(x,y):
+    wn.clear()
+
+    #Title
+    pen = turtle.Turtle()
+    pen.speed(0)
+    pen.shape("square")
+    pen.color("black")
+    pen.penup()
+    pen.hideturtle()
+    pen.goto(0,320)
+    pen.write("Welcome To The Recycling Catalogue\nClick The Button Below To See What Goes In (Source: ottawa.ca)", align="center", font=("Corier", 24, "normal"))
+
+    #Blue Bin Button
+    button1 =turtle.Turtle()
+    button1.hideturtle()
+    button1.shape('square')
+    button1.fillcolor('black')
+    button1.shapesize(stretch_wid = 1, stretch_len=5)
+    button1.penup()
+    button1.goto(0, 270)
+    button1.write("Blue Bin", align='center', font=FONT)
+    button1.color('black')
+    button1.sety(220 + CURSOR_SIZE + FONT_SIZE)
+    button1.onclick(blue_bin)
+    button1.showturtle()
+
+    #Black Bin Button
+    button2 =turtle.Turtle()
+    button2.hideturtle()
+    button2.shape('square')
+    button2.fillcolor('black')
+    button2.shapesize(stretch_wid = 1, stretch_len=5)
+    button2.penup()
+    button2.goto(0, 170)
+    button2.write("Black Bin", align='center', font=FONT)
+    button2.color('black')
+    button2.sety(120 + CURSOR_SIZE + FONT_SIZE)
+    button2.onclick(black_bin)
+    button2.showturtle()
+
+    #Green Bin Button
+    button3 =turtle.Turtle()
+    button3.hideturtle()
+    button3.shape('square')
+    button3.fillcolor('black')
+    button3.shapesize(stretch_wid = 1, stretch_len=5)
+    button3.penup()
+    button3.goto(0, 70)
+    button3.write("Green Bin", align='center', font=FONT)
+    button3.color('black')
+    button3.sety(20 + CURSOR_SIZE + FONT_SIZE)
+    button3.onclick(green_bin)
+    button3.showturtle()
+
+    #Hazardous Materials Button
+    button4 =turtle.Turtle()
+    button4.hideturtle()
+    button4.shape('square')
+    button4.fillcolor('black')
+    button4.shapesize(stretch_wid = 1, stretch_len=5)
+    button4.penup()
+    button4.goto(0, -30)
+    button4.write("Hazardous Materials", align='center', font=FONT)
+    button4.color('black')
+    button4.sety(-80 + CURSOR_SIZE + FONT_SIZE)
+    button4.onclick(haz_mat)
+    button4.showturtle()
+
+    #Yard Trimmings
+    button5 =turtle.Turtle()
+    button5.hideturtle()
+    button5.shape('square')
+    button5.fillcolor('black')
+    button5.shapesize(stretch_wid = 1, stretch_len=5)
+    button5.penup()
+    button5.goto(0, -130)
+    button5.write("Yards Trimmings", align='center', font=FONT)
+    button5.color('black')
+    button5.sety(-180 + CURSOR_SIZE + FONT_SIZE)
+    button5.onclick(yard_trim)
+    button5.showturtle()
+
+def Close():
+    turtle.done()
+
+wn.listen()
+wn.onkeypress(Close,"g")
+
+def blue_bin(x,y):
+    wn.clear()
+    turtle.penup()
+    turtle.hideturtle()
+    turtle.goto(0,320)
+    turtle.write("This is the Blue Bin Page", align="center", font=("Corier", 24, "normal"))
+    button6 =turtle.Turtle()
+    button6.hideturtle()
+    button6.shape('triangle')
+    button6.left(180)
+    button6.fillcolor('black')
+    button6.shapesize(stretch_wid = 1, stretch_len=1)
+    button6.penup()
+    button6.goto(-470, 340)
+    button6.write("Back", align='center', font=FONT)
+    button6.color('black')
+    button6.sety(340 + CURSOR_SIZE + FONT_SIZE)
+    button6.onclick(Main_page)
+    button6.showturtle()
+    turtle.goto(0,-400)
+    turtle.write ('''
+Glass
+Empty bottles and jars
+Metal
+Metal cans
+Soft drink cans
+Jar lids
+Aluminum containers (clean or food soiled)
+Aluminum foil (clean or food soiled)
+Empty paint cans with lids removed
+Empty aerosol cans (hairspray, paint, whipping cream)
+Spiral-wound canisters with metal ends (frozen concentrate cans, 
+potato chip tube)
+Plastic
+Food and household containers numbers 1 to 7
+Please note : Rigid #6 plastics such as yogurt cups and clear 
+plastics are accepted, while expanded #6 such as Styrofoam are not accepted.
+
+Take-out containers, bakery and produce containers (clam shells)
+Pails (remove metal handle)
+Planting trays
+Flower pots
+Single serve yogurt cups
+Clear plastic egg cartons
+Plastic bottles, jars and jugs
+Tubs and tub lids (yogurt, ice cream, margarine containers)
+Cartons
+Milk and juice cartons
+Drink boxes
+Soup boxes
+Frozen meal trays and take-out containers
+''', align="center", font=("Corier", 15, "normal"))
+
+def black_bin(x,y):
+    wn.clear()
+    turtle.penup()
+    turtle.hideturtle()
+    turtle.goto(0,320)
+    turtle.write("This is the Black Bin Page", align="center", font=("Corier", 24, "normal"))
+    button7 =turtle.Turtle()
+    button7.hideturtle()
+    button7.shape('triangle')
+    button7.left(180)
+    button7.fillcolor('black')
+    button7.shapesize(stretch_wid = 1, stretch_len=1)
+    button7.penup()
+    button7.goto(-470, 340)
+    button7.write("Back", align='center', font=FONT)
+    button7.color('black')
+    button7.sety(340 + CURSOR_SIZE + FONT_SIZE)
+    button7.onclick(Main_page)
+    button7.showturtle()
+    turtle.goto(0,-50)
+    turtle.write ('''
+What can I put in my black bin?
+Newspaper and flyers
+Magazines and catalogues
+Corrugated cardboard
+Telephone books
+Cereal and cracker boxes (remove plastic liners)
+Shoe and laundry detergent boxes
+Writing and computer paper, paper pads
+Hard and soft cover books
+Paper egg cartons, toilet paper rolls and paper towel rolls
+Gift wrapping paper and greeting cards
+Clean paper shopping bags or paper packaging
+Frozen dinner boxes
+Clean pizza boxes 
+''', align="center", font=("Corier", 15, "normal"))
+
+def green_bin(x,y):
+    wn.clear()
+    turtle.penup()
+    turtle.hideturtle()
+    turtle.goto(0,320)
+    turtle.write("This is the Green Bin Page", align="center", font=("Corier", 24, "normal"))
+    button8 =turtle.Turtle()
+    button8.hideturtle()
+    button8.shape('triangle')
+    button8.left(180)
+    button8.fillcolor('black')
+    button8.shapesize(stretch_wid = 1, stretch_len=1)
+    button8.penup()
+    button8.goto(-470, 340)
+    button8.write("Back", align='center', font=FONT)
+    button8.color('black')
+    button8.sety(340 + CURSOR_SIZE + FONT_SIZE)
+    button8.onclick(Main_page)
+    button8.showturtle()
+    turtle.goto(0,-330)
+    turtle.write ('''
+All food waste or scraps of any kind belong in your green bin. 
+This includes meat and fish, bones, egg shells, 
+mouldy food etc.
+
+Other acceptable items:
+Animal bedding (e.g. bird and hamster cages)
+Barbeque ashes
+Butcher’s meat wrap
+Cold fireplace ash
+Cotton balls
+Dog feces (must be contained in a sealed, leak-proof bag)
+Dryer lint
+Floor sweepings, vacuum bags and vacuum contents
+Food-soiled pizza boxes only (clean pizza boxes should 
+go in the black bin)
+Household plants, including soil
+Kitty litter (soiled)
+Microwave popcorn bags
+Paper coffee cups, plates and muffin wrappers
+Pet fur, hair and feathers
+Soiled paper, boxboard and cardboard
+Soiled paper towels, napkins and tissues 
+Sugar, flour and potato paper bags
+Waxed paper
+Wooden popsicle sticks and toothpicks
+''', align="center", font=("Corier", 15, "normal"))
+
+def haz_mat(x,y):
+    wn.clear()
+    turtle.penup()
+    turtle.hideturtle()
+    turtle.goto(0,320)
+    turtle.write("This is the Hazardous Materials Page", align="center", font=("Corier", 24, "normal"))
+    button9 =turtle.Turtle()
+    button9.hideturtle()
+    button9.shape('triangle')
+    button9.left(180)
+    button9.fillcolor('black')
+    button9.shapesize(stretch_wid = 1, stretch_len=1)
+    button9.penup()
+    button9.goto(-470, 340)
+    button9.write("Back", align='center', font=FONT)
+    button9.color('black')
+    button9.sety(340 + CURSOR_SIZE + FONT_SIZE)
+    button9.onclick(Main_page)
+    button9.showturtle()
+    turtle.goto(0,-250)
+    turtle.write ('''
+2022 One-day Household Hazardous Waste Events
+The following procedures will be in place at each event:
+Upon arrival, residents will be directed into a queue where 
+they will wait their turn to park in a designated area. All 
+vehicles will be spaced accordingly, and residents must 
+remain in their vehicle at all times;
+Residents arriving on bicycles are permitted to drop-off 
+materials, and they must follow the instructions provided by staff on site;
+Residents will not be able to sort their material on site. 
+Residents must remain in their vehicle at all times. Staff will 
+remove the material from the trunk of the vehicle by complying to 
+restrictions of physical distancing;
+The event will accept household hazardous waste only. No 
+electronic waste will be accepted. Residents can bring electronic 
+waste to the Trail Road Landfill facility at no cost or can contact a 
+participating Take it Back! member to arrange for proper disposal;
+Bins, totes, gas cans, etc. will be returned to the resident, if requested;
+If using a cardboard box to transport your material, please line the 
+box with a garbage bag for possible leaks;
+The last vehicle will be emptied at 4:00 p.m.
+''', align="center", font=("Corier", 15, "normal"))
+
+def yard_trim(x,y):
+    wn.clear()
+    turtle.penup()
+    turtle.hideturtle()
+    turtle.goto(0,320)
+    turtle.write("This is the Yards Trimmings Page", align="center", font=("Corier", 24, "normal"))
+    button10 =turtle.Turtle()
+    button10.hideturtle()
+    button10.shape('triangle')
+    button10.left(180)
+    button10.fillcolor('black')
+    button10.shapesize(stretch_wid = 1, stretch_len=1)
+    button10.penup()
+    button10.goto(-470, 340)
+    button10.write("Back", align='center', font=FONT)
+    button10.color('black')
+    button10.sety(340 + CURSOR_SIZE + FONT_SIZE)
+    button10.onclick(Main_page)
+    button10.showturtle()
+    turtle.goto(0,-50)
+    turtle.write ('''
+Only use compostable paper yard waste bags, a garbage can or cardboard boxes when 
+setting out leaf and yard waste for collection
+Ensure containers and bundles are no more than 15 kg (33 lb.) in weight"
+Extra leaf and yard waste goes in the green bin
+Branches are to be tied in bundles of less than 1.2 m (4 ft.) in length 
+and 60 cm (2 ft.) in width
+Individual branches should be less than 10 cm (4 in.) in diameter
+Fruit and pumpkins can be included
+Leave grass clippings on the lawn.
+Leaf and yard waste will not be collected as regular garbage
+All leaf and yard waste must be bundled using biodegradable material. 
+Twine or string is the best option. Wire, duct tape and plastic twine will not biodegrade.
+''', align="center", font=("Corier", 15, "normal"))
+
+
+Main_page(0,0)
+
+
+
+
+while True:
+    wn.update()
